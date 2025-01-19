@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avialable services-man</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .profile {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .profile:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .profile-content {
+            padding: 20px;
+        }
+
+        .profile-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .profile-content p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .profile-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .profile-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Rating Star Style */
+        .rating {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .rating span {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        .rating span.active {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile 1: Student -->
+        <div class="profile" id="student-profile">
+            <img src="ankit1.jpg" alt="Student">
+            <div class="profile-content">
+                <h3>Ankit Kumar</h3>
+                <p>Age: 22</p>
+                <p>Phone N0:6284890317</p>
+                <p>E-mail:ak55557889@gmail.com</p>
+                <p>Hii i am Ankit kumar i have good knowledge of this work.i have 5 years of experience in this field</p>
+                <a href="submit_form.php" class="profile-button" onclick="changeProfile('student')" target="_blank" >Contact me</a>
+
+                <!-- Rating Section -->
+                <div class="rating" id="student-rating">
+                    <span class="star" data-index="1">&#9733;</span>
+                    <span class="star" data-index="2">&#9733;</span>
+                    <span class="star" data-index="3">&#9733;</span>
+                    <span class="star" data-index="4">&#9733;</span>
+                    <span class="star" data-index="5">&#9733;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 2: Teacher -->
+        <div class="profile" id="teacher-profile">
+            <img src="haji1.jpg" alt="Teacher">
+            <div class="profile-content">
+                <h3>Hajikul Shaikh</h3>
+                
+                <p>Age: 22</p>
+                <p>Phone N0:9832015299</p>
+                <p>E-mail:hajikulshaikh0@gmail.com</p>
+                <p>Hii i am hajikul shaikh i  am generall starting my journey within this years.i am very hard-working person</p>
+                <a href="submit_form.php" class="profile-button" onclick="changeProfile('teacher')">Contact me</a>
+
+                <!-- Rating Section -->
+                <div class="rating" id="teacher-rating">
+                    <span class="star" data-index="1">&#9733;</span>
+                    <span class="star" data-index="2">&#9733;</span>
+                    <span class="star" data-index="3">&#9733;</span>
+                    <span class="star" data-index="4">&#9733;</span>
+                    <span class="star" data-index="5">&#9733;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 3: Developer -->
+        <div class="profile" id="developer-profile">
+            <img src="https://www.w3schools.com/w3images/team3.jpg" alt="Developer">
+            <div class="profile-content">
+                <h3>Ankit Kumar Gupta</h3>
+                <p>Age: 50</p>
+                
+                <p>Phone N0:7380272327</p>
+                <p>E-mail:ankitgupta789@gmail.com</p>
+                <p>Hii i am Ankit Kumar Gupta i  am passonate about my work.i  give very fast service</p>
+                <a href="submit_form.php" class="profile-button" onclick="changeProfile('developer')">Contact me</a>
+
+                <!-- Rating Section -->
+                <div class="rating" id="developer-rating">
+                    <span class="star" data-index="1">&#9733;</span>
+                    <span class="star" data-index="2">&#9733;</span>
+                    <span class="star" data-index="3">&#9733;</span>
+                    <span class="star" data-index="4">&#9733;</span>
+                    <span class="star" data-index="5">&#9733;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 4: Designer -->
+        <div class="profile" id="designer-profile">
+            <img src="rabish1.jpg" alt="Designer">
+            <div class="profile-content">
+                <h3>Rabish Kumar</h3>
+                <p>Age: 21</p>
+                
+                <p>Phone N0:7301365405</p>
+                <p>E-mail:Rabish897563@gmail.com</p>
+                <p>Hii i  am Rabish kumar i  give you services within 15 mintues. i also have good rating </p>
+                <a href="submit_form.php" class="profile-button" onclick="changeProfile('designer')">Contact me</a>
+
+                <!-- Rating Section -->
+                <div class="rating" id="designer-rating">
+                    <span class="star" data-index="1">&#9733;</span>
+                    <span class="star" data-index="2">&#9733;</span>
+                    <span class="star" data-index="3">&#9733;</span>
+                    <span class="star" data-index="4">&#9733;</span>
+                    <span class="star" data-index="5">&#9733;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle profile view change
+       
+        // Predefined Ratings for Profiles
+        const preDefinedRatings = {
+            student: 5,     // 5 stars for the Student profile
+            teacher: 4,     // 4 stars for the Teacher profile
+            developer: 3,   // 3 stars for the Developer profile
+            designer: 4     // 4 stars for the Designer profile
+        };
+
+        // Rating Functionality
+        const ratingElements = document.querySelectorAll('.rating');
+
+        ratingElements.forEach(ratingElement => {
+            const stars = ratingElement.querySelectorAll('.star');
+            const profileId = ratingElement.id.split('-')[0]; // Extract profile id from the rating section
+            const predefinedRating = preDefinedRatings[profileId]; // Get the predefined rating
+
+            // Set the predefined rating
+            for (let i = 0; i < predefinedRating; i++) {
+                stars[i].classList.add('active');  // Add 'active' class to highlight stars
+            }
+
+            // Event listener to handle star clicks
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    updateRating(ratingElement, index);
+                });
+            });
+        });
+
+        // Function to update rating
+        function updateRating(ratingElement, index) {
+            const stars = ratingElement.querySelectorAll('.star');
+            stars.forEach(star => {
+                const starIndex = parseInt(star.getAttribute('data-index'));
+                if (starIndex <= index) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

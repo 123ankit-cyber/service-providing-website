@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Spring</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Josefin Sans", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+                url("back1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        nav {
+            width: 100%;
+            height: 15vh;
+            background: rgb(10, 0, 0);
+            color: rgb(248, 246, 246);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        nav .logo {
+            width: 25%;
+            text-align: center;
+            color: #003ab8;
+        }
+
+        nav .menu {
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav .menu a {
+            width: 25%;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav .menu a:first-child {
+            color: #00b894;
+        }
+
+        main {
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        section h3 {
+            font-size: 35px;
+            font-weight: 200;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        section h1 {
+            margin: 30px 0 20px 0;
+            font-size: 55px;
+            font-weight: 700;
+            text-shadow: 2px 1px 5px black;
+            text-transform: uppercase;
+        }
+
+        section p {
+            font-size: 25px;
+            word-spacing: 2px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        section a {
+            padding: 12px 30px;
+            border-radius: 4px;
+            outline: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.5s ease;
+        }
+
+        section .btnone {
+            background: #fff;
+            color: #000;
+        }
+
+        .btnone:hover {
+            background: #00b894;
+            color: white;
+        }
+
+        section .btntwo {
+            background: #00b894;
+            color: white;
+        }
+
+        .btntwo:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Forms Styling */
+        .form-container {
+            width: 400px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background: #00b894;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #003ab8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo"><h1 style="font-size: 20px;">Mind Spring</h1></div>
+        <div class="menu">
+            <a href="Mind Spring.html" style="font-size: 23px">Home</a>
+            <a href="service.html" target="_blank">Services</a>
+            <a href="about.html" target="_blank">About</a>
+            <a href="index.php">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <h3>Welcome To Mind Spring</h3>
+            <h1>We Provide Services of <span class="change_content"></span></h1>
+            <p>"We provide different types of services"</p>
+            <a href="project.html" class="btnone" target="_blank">Services</a>
+            <a href="#" class="btntwo">Sign up here</a>
+        </section>
+    </main>
+</header>
+
+<!-- Login Form -->
+<div class="form-container" id="login-form" style="display: none;">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<!-- Signup Form -->
+<div class="form-container" id="signup-form" style="display: none;">
+    <h2>Sign Up</h2>
+    <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+<script>
+    // Show the Login Form when "Sign up here" is clicked
+    const signupButton = document.querySelector('.btntwo');
+    signupButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('signup-form').style.display = 'block';
+    });
+
+    // Hide the Login and Signup forms when the user is logged in or signed up.
+    // You can customize this part based on the login/signup result.
+</script>
+
+</body>
+</html>
